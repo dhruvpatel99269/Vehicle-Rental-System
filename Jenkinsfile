@@ -13,7 +13,7 @@ pipeline {
         stage('Compile') {
             steps {
                 echo 'Compiling the C++ program...'
-                sh 'g++ -std=c++17 -o rental_app main.cpp'
+                sh 'g++ -std=c++17 -o rental_app vrs.cpp'
             }
         }
 
