@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Checkout Code') {
             steps {
-                // Adjust this if using GitHub or other repo
+                echo 'Cloning repository...'
                 git 'https://github.com/dhruvpatel99269/Vehicle-Rental-System'
             }
         }
@@ -19,8 +19,14 @@ pipeline {
         stage('Run') {
             steps {
                 echo 'Running the program...'
-                // You can redirect input from a file or run interactively if on a local agent
+                // Simulate user input if needed
                 sh './rental_app < input.txt || true'
+            }
+        }
+
+        stage('Done') {
+            steps {
+                echo '✅ Pipeline execution finished successfully.'
             }
         }
     }
