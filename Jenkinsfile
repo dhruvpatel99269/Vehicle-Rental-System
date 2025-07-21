@@ -3,11 +3,12 @@ pipeline {
 
     stages {
         stage('Checkout Code') {
-            steps {
-                echo 'Cloning repository...'
-                git 'https://github.com/dhruvpatel99269/Vehicle-Rental-System'
-            }
+        steps {
+            echo 'Cloning repository...'
+            git branch: 'main', url: 'https://github.com/dhruvpatel99269/Vehicle-Rental-System'
         }
+}
+
 
         stage('Compile') {
             steps {
